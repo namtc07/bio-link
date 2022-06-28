@@ -1,5 +1,4 @@
 import { Input, Button } from "antd";
-import { useState, useEffect, useCallback } from "react";
 import styled from "styled-components";
 
 const Content1 = styled.div`
@@ -147,50 +146,6 @@ const Feature = styled.div`
   }
 `;
 
-const getPosition = () => {
-  return {
-    x: document.body.scrollLeft,
-    y: document.body.scrollTop,
-  };
-};
-
-const useScroll = () => {
-  const [position, setPosition] = useState(getPosition());
-  useEffect(() => {
-    const handler = () => {
-      setPosition(getPosition(document));
-    };
-    document.addEventListener("scroll", handler);
-    return () => {
-      document.removeEventListener("scroll", handler);
-    };
-  }, []);
-  return position;
-};
-
-function ScrollTop() {
-  const { y } = useScroll();
-
-  const goTop = useCallback(() => {
-    document.body.scrollTop = 0;
-  }, []);
-
-  const style = {
-    position: "fixed",
-    right: "10px",
-    bottom: "10px",
-  };
-  if (y > 50) {
-    return (
-      <button onClick={goTop} style={style}>
-        Back to Top
-      </button>
-    );
-  }
-
-  return null;
-}
-
 function ContentMain() {
   return (
     <>
@@ -214,8 +169,8 @@ function ContentMain() {
         </div>
       </Content1>
       <Feature className="feature">
-        <div class="feature-list">
-          <div class="flex space-x-8" data-v-2ae8992b="">
+        <div className="feature-list">
+          <div className="flex space-x-8" data-v-2ae8992b="">
             <svg
               width="24"
               height="24"
@@ -225,8 +180,8 @@ function ContentMain() {
               data-v-2ae8992b=""
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M16.5532 2.00002C15.1056 2 14.1724 2.17246 13.1027 2.69607C12.7066 2.88993 12.335 3.12339 11.99 3.39576C11.6582 3.13866 11.3015 2.91592 10.9218 2.72813C9.83132 2.18878 8.85028 2 7.45455 2C3.71644 2 1 5.09727 1 9.11988C1 12.1578 2.69383 15.0923 5.84884 17.9299C7.50489 19.4193 9.61932 20.8933 11.1336 21.6775L12 22.1261L12.8664 21.6775C14.3807 20.8933 16.4951 19.4193 18.1512 17.9299C21.3062 15.0923 23 12.1578 23 9.11988C23 5.13984 20.2579 2.01536 16.5532 2.00002ZM21 9.11988C21 11.4999 19.5862 13.9493 16.8137 16.4429C15.3022 17.8023 13.359 19.1609 12 19.8737C10.641 19.1609 8.69782 17.8023 7.18628 16.4429C4.41382 13.9493 3 11.4999 3 9.11988C3 6.14772 4.88364 4 7.45455 4C8.56428 4 9.24813 4.13159 10.0351 4.52084C10.5 4.75077 10.9109 5.05437 11.2665 5.43377L12.0023 6.2187L12.7315 5.42755C13.0951 5.03295 13.512 4.72244 13.9819 4.49243C14.7459 4.11849 15.387 4 16.5491 4.00001C19.0882 4.01053 21 6.18896 21 9.11988Z"
                 fill="url(#paint0_linear)"
                 data-v-2ae8992b=""
@@ -241,20 +196,20 @@ function ContentMain() {
                   gradientUnits="userSpaceOnUse"
                   data-v-2ae8992b=""
                 >
-                  <stop stop-color="#FF5959" data-v-2ae8992b=""></stop>
+                  <stop stopColor="#FF5959" data-v-2ae8992b=""></stop>
                   <stop
                     offset="1"
-                    stop-color="#C059FF"
+                    stopColor="#C059FF"
                     data-v-2ae8992b=""
                   ></stop>
                 </linearGradient>
               </defs>
             </svg>
-            <h4 data-v-2ae8992b="" class="">
+            <h4 data-v-2ae8992b="" className="">
               Free forever
             </h4>
           </div>
-          <div class="flex space-x-8" data-v-2ae8992b="">
+          <div className="flex space-x-8" data-v-2ae8992b="">
             <svg
               width="24"
               height="24"
@@ -278,20 +233,20 @@ function ContentMain() {
                   gradientUnits="userSpaceOnUse"
                   data-v-2ae8992b=""
                 >
-                  <stop stop-color="#FF5858" data-v-2ae8992b=""></stop>
+                  <stop stopColor="#FF5858" data-v-2ae8992b=""></stop>
                   <stop
                     offset="1"
-                    stop-color="#C058FF"
+                    stopColor="#C058FF"
                     data-v-2ae8992b=""
                   ></stop>
                 </linearGradient>
               </defs>
             </svg>
-            <h4 data-v-2ae8992b="" class="">
+            <h4 data-v-2ae8992b="" className="">
               15+ themes
             </h4>
           </div>
-          <div class="flex space-x-8" data-v-2ae8992b="">
+          <div className="flex space-x-8" data-v-2ae8992b="">
             <svg
               width="20"
               height="18"
@@ -303,17 +258,17 @@ function ContentMain() {
               <path
                 d="M1 16.5002L4.66663 11.0003L10.1666 11.6114L13.869 4.38672"
                 stroke="url(#paint0_linear)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 data-v-2ae8992b=""
               ></path>
               <path
                 d="M17.0279 9.74367L14.4612 2.50564L7.11143 4.73238"
                 stroke="url(#paint1_linear)"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 data-v-2ae8992b=""
               ></path>
               <defs data-v-2ae8992b="">
@@ -326,10 +281,10 @@ function ContentMain() {
                   gradientUnits="userSpaceOnUse"
                   data-v-2ae8992b=""
                 >
-                  <stop stop-color="#FF5858" data-v-2ae8992b=""></stop>
+                  <stop stopColor="#FF5858" data-v-2ae8992b=""></stop>
                   <stop
                     offset="1"
-                    stop-color="#C058FF"
+                    stopColor="#C058FF"
                     data-v-2ae8992b=""
                   ></stop>
                 </linearGradient>
@@ -342,20 +297,20 @@ function ContentMain() {
                   gradientUnits="userSpaceOnUse"
                   data-v-2ae8992b=""
                 >
-                  <stop stop-color="#FF5858" data-v-2ae8992b=""></stop>
+                  <stop stopColor="#FF5858" data-v-2ae8992b=""></stop>
                   <stop
                     offset="1"
-                    stop-color="#C058FF"
+                    stopColor="#C058FF"
                     data-v-2ae8992b=""
                   ></stop>
                 </linearGradient>
               </defs>
             </svg>
-            <h4 data-v-2ae8992b="" class="">
+            <h4 data-v-2ae8992b="" className="">
               Visitor stats
             </h4>
           </div>
-          <div class="flex space-x-8" data-v-2ae8992b="">
+          <div className="flex space-x-8" data-v-2ae8992b="">
             <svg
               width="15"
               height="22"
@@ -367,7 +322,7 @@ function ContentMain() {
               <path
                 d="M13.4651 8.7013C13.4285 8.63688 13.3754 8.58329 13.3113 8.54601C13.2471 8.50873 13.1742 8.48908 13.0999 8.48908H7.60113L8.52302 1.46492C8.53291 1.37092 8.51079 1.27633 8.46021 1.19638C8.40964 1.11643 8.33356 1.05579 8.24422 1.0242C8.15488 0.992614 8.05748 0.991929 7.96771 1.02226C7.87793 1.05258 7.801 1.11215 7.7493 1.19138L1.06218 12.8743C1.02307 12.9377 1.00164 13.0104 1.00009 13.0848C0.99854 13.1593 1.01693 13.2328 1.05336 13.2977C1.08979 13.3627 1.14294 13.4169 1.20734 13.4545C1.27173 13.4922 1.34504 13.5121 1.4197 13.5121H6.83633L6.10575 20.5468C6.09857 20.6405 6.12302 20.7339 6.1752 20.8121C6.22738 20.8903 6.3043 20.9489 6.39371 20.9785C6.48313 21.0082 6.57991 21.0071 6.66866 20.9755C6.7574 20.944 6.83301 20.8837 6.88345 20.8044L13.4601 9.12271C13.4982 9.05919 13.5188 8.98672 13.5197 8.91269C13.5205 8.83866 13.5017 8.76572 13.4651 8.7013Z"
                 stroke="url(#paint0_linear)"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 data-v-2ae8992b=""
               ></path>
               <defs data-v-2ae8992b="">
@@ -380,22 +335,21 @@ function ContentMain() {
                   gradientUnits="userSpaceOnUse"
                   data-v-2ae8992b=""
                 >
-                  <stop stop-color="#FF5858" data-v-2ae8992b=""></stop>
+                  <stop stopColor="#FF5858" data-v-2ae8992b=""></stop>
                   <stop
                     offset="1"
-                    stop-color="#C058FF"
+                    stopColor="#C058FF"
                     data-v-2ae8992b=""
                   ></stop>
                 </linearGradient>
               </defs>
             </svg>
-            <h4 data-v-2ae8992b="" class="">
+            <h4 data-v-2ae8992b="" className="">
               Lightning fast (100ms)
             </h4>
           </div>
         </div>
       </Feature>
-      <ScrollTop />
     </>
   );
 }

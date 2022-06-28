@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Header } from "antd/lib/layout/layout";
 import styled from "styled-components";
 
@@ -10,6 +11,7 @@ const HeaderAntd = styled(Header)`
   line-height: 0;
   background-color: #fff;
   padding-top: 10px;
+  transition: padding-top 0.75s ease;
   .mx-8 {
     margin-left: 8px;
     margin-right: 8px;
@@ -76,10 +78,25 @@ const HeaderAntd = styled(Header)`
   }
 `;
 
-
 function HeaderHome() {
+  useEffect(() => {
+    const handleScoll = () => {
+      if (window.scrollY > 200) {
+        const y = document.querySelector(".header").classList.add("scrolY");
+      } else {
+        const y = document.querySelector(".header").classList.remove("scrolY");
+      }
+    };
+
+    window.addEventListener("scroll", handleScoll);
+
+    //Cleanup fc
+    () => {
+      return window.removeEventListener("scroll", handleScoll);
+    };
+  }, []);
   return (
-    <HeaderAntd>
+    <HeaderAntd className="header">
       <div className="mx-8">
         <div className="nav-wrapper">
           <div>
@@ -126,8 +143,8 @@ function HeaderHome() {
                 <path
                   d="M1 1H41V41H1V1Z"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinejoin="round"
                 ></path>
               </svg>
             </div>
