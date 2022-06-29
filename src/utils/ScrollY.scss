@@ -1,0 +1,39 @@
+.header_dark {
+  margin-top: 0 !important;
+  background-color: #000 !important;
+  transition: background-color 0.75s ease;
+ .nav-logo{
+  background-color: #fff;
+ }
+  .nav-text {
+    color: #fff !important;
+  }
+  .nav-reverse {
+    .signup {
+      background-color: white !important;
+      color: black !important;
+    }
+  }
+}
+.bg_dark {
+  background-color: #000 !important;
+  transition: background-color 0.75s ease;
+}
+.bg_light {
+  background-color: #fff !important;
+  transition: background-color 0.75s ease;
+  color: black;
+  svg {
+    color: black;
+  }
+}
+.dark-space-in {
+  background-color: #000 !important;
+  border-radius: 0;
+  transition: all 0.75s ease;
+}
+.dark-space-black {
+  transform: matrix(1, -0.04, 0.07, 1, 0, 0) scale(1.1) !important;
+  border-radius: 0;
+  transition: all 0.72s ease;
+}
