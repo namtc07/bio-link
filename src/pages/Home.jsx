@@ -1,15 +1,17 @@
 import { Layout } from "antd";
-import HeaderHome from "../layouts/Header";
 import { useEffect } from "react";
-import ContentMain from "../layouts/ContentMain";
+import { ContentMain } from "../layouts/layoutHome";
 import styled from "styled-components";
-import FooterHome from "../layouts/Footer";
-
+import { HeaderHome, FooterHome, HelpCenter } from "../layouts";
 const { Content } = Layout;
 
 const LayoutAnt = styled(Layout)`
   background-color: #fff;
-  transition: background-color 0.75s ease;
+  transition: var(--transis-bgcl);
+`;
+
+const ContentAnt = styled(Content)`
+  margin-top: 74px;
 `;
 
 function Home() {
@@ -30,17 +32,16 @@ function Home() {
   }, []);
 
   return (
-    <LayoutAnt className="layout-main">
-      <HeaderHome />
-      <Content
-        style={{
-          marginTop: 74,
-        }}
-      >
-        <ContentMain />
-      </Content>
-      <FooterHome />
-    </LayoutAnt>
+    <>
+      <LayoutAnt className="layout-main">
+        <HeaderHome />
+        <ContentAnt>
+          <ContentMain />
+        </ContentAnt>
+        <FooterHome />
+      </LayoutAnt>
+      <HelpCenter />
+    </>
   );
 }
 

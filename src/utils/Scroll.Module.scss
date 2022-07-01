@@ -1,0 +1,57 @@
+.bg_dark {
+  background-color: var(--black-dark) !important;
+  transition: var(--transis-bgcl);
+  .header_dark {
+    margin-top: 0 !important;
+    background-color: var(--black-dark) !important;
+    transition: var(--transis-bgcl);
+    .nav-logo {
+      svg {
+        path[fill*="black"] {
+          fill: var(--white);
+        }
+        path[stroke*="black"] {
+          stroke: var(--white);
+        }
+      }
+    }
+    .nav-text {
+      color: var(--white) !important;
+    }
+    .nav-reverse {
+      .signup {
+        background-color: var(--white) !important;
+        color: var(--black-dark) !important;
+      }
+    }
+  }
+  .ant-layout-content {
+    color: var(--white);
+    .opacity,
+    .feature {
+      opacity: 0.3;
+    }
+    .feature-list {
+      .flex h4 {
+        color: var(--white) !important;
+      }
+    }
+    .title-content {
+      color: var(--white);
+      .text_gray {
+        color: var(--black-blue);
+        transition: all 0.75s ease;
+      }
+    }
+  }
+}
+
+.visible {
+  visibility: visible;
+}
+
+.dark-space-black {
+  transform: matrix(1, -0.04, 0.07, 1, 0, 0) scale(1.1) !important;
+  border-radius: 0;
+  transition: all 0.72s ease;
+}

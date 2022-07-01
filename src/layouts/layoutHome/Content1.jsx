@@ -10,15 +10,13 @@ const Wrapper = styled.div`
   text-align: center;
   padding: 16px 24px;
   .title-content1 {
+    font-weight: var(--fw-600);
     line-height: 100px;
-    font-weight: 700;
     align-self: center;
     width: 760px;
     margin: 48px 0;
     background-image: radial-gradient(circle, #c058ff 0, #ff5858 26%, #000 27%);
-    font-size: 90px;
-    background-position: 100% 100%;
-    background-size: 150%;
+    font-size: 9rem;
     animation-name: bg-circle;
     animation-duration: 10s;
     animation-delay: 0s;
@@ -46,7 +44,7 @@ const Wrapper = styled.div`
     margin: auto;
   }
   .create-bio-bottom {
-    font-size: 16px;
+    font-size: 1.6rem;
     margin-top: 16px;
   }
 `;
@@ -64,19 +62,19 @@ const CreateBioTop = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #fff;
+    background-color: var(--white);
     .title-text {
-      color: #333;
+      color: var(--gray-ish);
       line-height: 17px;
-      font-weight: 600;
+      font-weight: var(--fw-600);
       padding-left: 24px;
-      font-size: 18px;
+      font-size: 1.8rem;
     }
   }
   .create-input {
     width: 500px;
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: var(--fw-600);
     line-height: 1.75rem;
     border: 2px solid white;
     height: 50px;
@@ -85,16 +83,14 @@ const CreateBioTop = styled.div`
     box-shadow: none;
   }
   .create-bio-link {
-    background: 0 0 !important;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     .create-bio-btn {
       width: auto;
-      color: white;
-      font-weight: 700;
+      color: var(--white);
+      font-weight: var(--fw-600);
       background-color: transparent;
       border: none;
       font-size: 16px;
@@ -124,7 +120,7 @@ const CreateBioTop = styled.div`
 
 function Content1() {
   return (
-    <Wrapper>
+    <Wrapper className="opacity">
       <h1 className="title-content1">The One Link for All Your Links</h1>
       <div className="create-bio">
         <CreateBioTop className="create-bio-top">

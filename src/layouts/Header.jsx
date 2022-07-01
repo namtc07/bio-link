@@ -99,11 +99,10 @@ function HeaderHome() {
     <HeaderAntd>
       <div className="mx-8">
         <div className="nav-wrapper">
-          <div>
-            <div className="nav-logo">
-              <BioLogo />
-            </div>
+          <div className="nav-logo">
+            <BioLogo />
           </div>
+
           <div className="nav-text">Features</div>
           <div className="nav-text">FAQ</div>
           <div className="nav-reverse">

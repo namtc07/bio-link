@@ -5,47 +5,37 @@ import { Row, Col } from "antd";
 const Wrapper = styled.div`
   background: linear-gradient(180deg, #ff5858, #c058ff);
   transform: matrix(1, 0.04, -0.07, 1, 0, 0) scale(1);
-  width: 1300px;
+  width: var(--w-1300);
   border-radius: 12px;
-  transition: all 0.75s ease;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+  transition: var(--transis-all);
+  margin: 0 auto;
   .dark-space {
-    width: 1300px;
-    transition: all 0.72s ease;
-    transform: matrix(1, -0.04, 0.07, 1, 0, 0) scale(1);
+    width: var(--w-1300);
     border-radius: 12px;
-    padding-top: 64px;
-    padding-bottom: 64px;
-    --tw-bg-opacity: 1;
+    padding: 64px 0;
     background-color: rgba(0, 0, 0, var(--tw-bg-opacity));
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    transform: matrix(1, -0.04, 0.07, 1, 0, 0) scale(1);
+    transition: all 0.72s ease;
     .text-gradient {
-      background: #000;
-      background-color: #000;
       background-image: linear-gradient(
         0.351turn,
         #ff5858 23.71%,
         #c058ff 78.8%
       );
-      background-size: 100%;
-      background-repeat: no-repeat;
       -webkit-background-clip: text;
-      transition: all 0.75s ease;
+      transition: var(--transis-all);
       -webkit-text-fill-color: transparent;
       text-align: center;
-      font-size: 36px;
-      font-weight: 600;
+      font-size: 3.6rem;
+      font-weight: var(--fw-600);
     }
     .flex-list {
+      display: grid;
       gap: 32px;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      display: grid;
-      margin-left: 80px;
-      margin-right: 80px;
-      font-weight: 600;
+      margin: 0 80px;
+      font-weight: var(--fw-600);
       justify-content: center;
       align-content: center;
       flex-direction: column;
@@ -55,28 +45,26 @@ const Wrapper = styled.div`
         justify-content: center;
         img {
           border-radius: 10px;
+          width: 350px;
+          height: 257px;
         }
       }
       .wrapper-text {
-        --tw-text-opacity: 1;
         color: rgba(255, 255, 255, var(--tw-text-opacity));
         width: 350px;
-        padding-left: 0;
-        padding-right: 0;
-        font-size: 24px;
+        padding: 0;
+        font-size: 2.4rem;
         line-height: 1.625;
-        margin-top: 24px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 24px auto 0 auto;
         h2 {
-          color: white;
-          font-size: 24px;
-          font-weight: 600;
+          color: var(--white);
+          font-size: 2.4rem;
+          font-weight: var(--fw-600);
         }
         .text-whiteLOp {
-          color: rgba(255, 255, 255, 0.6);
-          font-weight: 500;
-          font-size: 18px;
+          color: var(--gray-ish);
+          font-weight: var(--fw-500);
+          font-size: 1.8rem;
           margin: 0;
         }
       }
@@ -101,58 +89,40 @@ function Content2() {
   return (
     <Wrapper>
       <div className="dark-space">
-        <div className="scrollContent">
+        <div className="scroll-content">
           <div className="text-gradient">Launch your page in seconds</div>
           <div className="flex-list">
-            <div className="mx-20 lg:mx-0">
+            <div className="item">
               <div className="justify-center">
-                <img
-                  src="https://cdn.bio.link/landing/claim.jpg"
-                  width="350"
-                  height="257"
-                  alt=""
-                  className="landing_img rounded-md"
-                />
+                <img src="https://cdn.bio.link/landing/claim.jpg" />
               </div>
               <div className="wrapper-text">
                 <h2>Claim your bio link</h2>
-                <h3 className="text-whiteLOp text-18 font-inter font-medium">
+                <h3 className="text-whiteLOp">
                   Choose your username, pick a theme (or design your own), and
                   publish your page.
                 </h3>
               </div>
             </div>
-            <div className="mx-20 mt-64 lg:mx-0 lg:mt-0">
+            <div className="item">
               <div className="justify-center">
-                <img
-                  src="https://cdn.bio.link/landing/all_links.jpg"
-                  width="350"
-                  height="257"
-                  alt=""
-                  className="landing_img rounded-md"
-                />
+                <img src="https://cdn.bio.link/landing/all_links.jpg" />
               </div>
               <div className="wrapper-text">
                 <h2>Add all your links</h2>
-                <h3 className="text-whiteLOp text-18 font-inter font-medium">
+                <h3 className="text-whiteLOp">
                   Add your socials, websites, videos, anything. Your bio link is
                   your new website.{" "}
                 </h3>
               </div>
             </div>
-            <div className="mx-20 mt-64 lg:mx-0 lg:mt-0">
+            <div className="item">
               <div className="justify-center">
-                <img
-                  src="https://cdn.bio.link/landing/use_it_everywhere.jpg"
-                  width="350"
-                  height="257"
-                  alt=""
-                  className="landing_img rounded-md"
-                />
+                <img src="https://cdn.bio.link/landing/use_it_everywhere.jpg" />
               </div>
               <div className="wrapper-text">
                 <h2>Use it everywhere</h2>
-                <h3 className="text-whiteLOp text-18 font-inter font-medium">
+                <h3 className="text-whiteLOp">
                   Use your bio link on your Instagram, Twitter, TikTok, emails,
                   wherever people follow you.
                 </h3>
